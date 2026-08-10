@@ -2,7 +2,7 @@ name: collector
 description: "Manage your collections"
 publish_to: 'none'
 
-version: 15.0.0+1
+version: 15.1.0+1
 
 environment:
   sdk: ^3.9.2

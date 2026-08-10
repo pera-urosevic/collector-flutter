@@ -6,6 +6,7 @@ import 'package:collector/system/platform.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:signals/signals_flutter.dart';
+import 'package:flutter/services.dart';
 
 void main() async {
   runZonedGuarded<Future<void>>(
@@ -22,6 +23,12 @@ void main() async {
         SignalsObserver.instance = null;
       }
       await init();
+      SystemChrome.setSystemUIOverlayStyle(
+        const SystemUiOverlayStyle(
+          systemNavigationBarColor: Colors.black,
+          systemNavigationBarIconBrightness: Brightness.light, // White icons
+        ),
+      );
       runApp(const CollectorApp());
     },
     (Object error, StackTrace stack) {
