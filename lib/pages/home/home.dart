@@ -19,6 +19,21 @@ class _CollectorPageState extends State<CollectorPage> {
 
   @override
   Widget build(BuildContext context) {
-    return AppPage(scaffold: Scaffold(body: Menu()));
+    return AppPage(
+      scaffold: Scaffold(
+        body: Center(
+          child: Flex(
+            direction: Axis.vertical,
+            spacing: 0,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/icon.png', width: 120, height: 120, fit: BoxFit.contain),
+              Menu(),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

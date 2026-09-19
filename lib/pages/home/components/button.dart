@@ -24,7 +24,7 @@ class MenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      style: TextButton.styleFrom(padding: const EdgeInsets.all(16.0), textStyle: const TextStyle(fontSize: 20)),
+      style: TextButton.styleFrom(padding: const EdgeInsets.all(12.0), textStyle: const TextStyle(fontSize: 20)),
       onPressed: () => onCollection(context, name),
       child: Text(name),
     );
