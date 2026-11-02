@@ -1,21 +1,23 @@
-import 'package:collector/models/filter.dart';
-
 class ItemsView {
   final String name;
-  final String sort;
-  final bool reverse;
   final String search;
-  final List<Filter> filters;
+  final String query;
 
-  ItemsView({required this.name, required this.sort, required this.reverse, this.search = '', this.filters = const []});
+  ItemsView({required this.name, this.search = '', this.query = ''});
 
   factory ItemsView.fromJson(Map<String, dynamic> json) => ItemsView(
-    name: json['name'],
-    sort: json['sort'],
-    reverse: json['reverse'],
-    search: json['search'],
-    filters: (json['filters'] as List).map((f) => Filter.fromJson(f)).toList(),
+    name: json['name'] ?? '',
+    search: json['search'] ?? '',
+    query: json['query'] ?? '',
   );
+
+  ItemsView copyWith({String? name, String? search, String? query}) {
+    return ItemsView(
+      name: name ?? this.name,
+      search: search ?? this.search,
+      query: query ?? this.query,
+    );
+  }
 }
 
 typedef ItemsViewList = List<ItemsView>;

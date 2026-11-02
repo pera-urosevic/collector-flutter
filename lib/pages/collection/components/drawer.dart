@@ -1,4 +1,3 @@
-import 'package:collector/models/view.dart';
 import 'package:collector/pages/collection/actions/actions.dart';
 import 'package:collector/pages/collection/signals/collection.dart';
 import 'package:collector/pages/collection/signals/view.dart';
@@ -45,15 +44,7 @@ class _CollectionDrawerState extends State<CollectionDrawer> {
                   controller: _searchController,
                   decoration: InputDecoration(hintText: 'Search'),
                   onSubmitted: (text) {
-                    if (text.isEmpty) return;
-                    ItemsView view = ItemsView(
-                      search: text,
-                      name: $query.value.name,
-                      filters: $query.value.filters,
-                      sort: $query.value.sort,
-                      reverse: $query.value.reverse,
-                    );
-                    actionQueryCollection(view);
+                    actionQueryCollection($query.value.copyWith(search: text));
                   },
                 ),
                 const SizedBox(height: 12),

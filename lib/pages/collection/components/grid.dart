@@ -2,7 +2,6 @@ import 'package:collector/pages/collection/components/image_card.dart';
 import 'package:collector/pages/collection/components/text_card.dart';
 import 'package:collector/models/item.dart';
 import 'package:collector/pages/collection/signals/collection.dart';
-import 'package:collector/pages/collection/signals/view.dart';
 import 'package:flutter/material.dart';
 import 'package:signals/signals_flutter.dart';
 
@@ -16,9 +15,10 @@ class Grid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final items = $itemsFound.watch(context);
+    final collection = $collection.watch(context);
     final fields = $fieldsIndex.watch(context);
     final imageFields = $fieldsImageIndex.watch(context);
+    final items = collection.items;
 
     return Padding(
       padding: EdgeInsetsGeometry.fromLTRB(10, 0, 10, 10),

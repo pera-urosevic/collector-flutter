@@ -17,6 +17,6 @@ class Collection {
   }
 
   factory Collection.blank(CollectionName name) {
-    return Collection(name: name, meta: Meta.fromRows([]), items: []);
+    return Collection(name: name, meta: Meta.blank(), items: []);
   }
 }

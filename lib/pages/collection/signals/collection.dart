@@ -43,7 +43,7 @@ final $collection = CollectionSignal(
     name: '',
     meta: Meta(
       fields: [Field(name: 'id', type: FieldType.id, index: true)],
-      views: [ItemsView(name: 'default', sort: 'id', reverse: false)],
+      views: [ItemsView(name: 'Default')],
     ),
     items: [],
   ),
